@@ -1,4 +1,4 @@
-package com.googlesample.newarchitecture.modules;
+package com.eastflag.sample.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
