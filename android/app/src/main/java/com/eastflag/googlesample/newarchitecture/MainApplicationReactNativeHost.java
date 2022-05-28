@@ -1,4 +1,4 @@
-package com.eastflag.sample.newarchitecture;
+package com.eastflag.googlesample.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.eastflag.sample.BuildConfig;
-import com.eastflag.sample.newarchitecture.components.MainComponentsRegistry;
-import com.eastflag.sample.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.eastflag.googlesample.BuildConfig;
+import com.eastflag.googlesample.newarchitecture.components.MainComponentsRegistry;
+import com.eastflag.googlesample.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

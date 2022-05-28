@@ -1,4 +1,4 @@
-package com.eastflag.sample;
+package com.eastflag.googlesample;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
