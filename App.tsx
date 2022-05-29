@@ -18,6 +18,7 @@ GoogleSignin.configure({
   // webClientId:
   //   '784124912483-abs461p8kl0b98lq7s53pm08cgs3l2oj.apps.googleusercontent.com',
   offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+  iosClientId: '784124912483-51uahurhitlvk70ugfo82m9pvnhtp7kb.apps.googleusercontent.com',
 });
 
 const App = () => {
