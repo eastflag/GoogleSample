@@ -1,16 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
 import {Button, SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 import {GoogleSignin, statusCodes} from '@react-native-google-signin/google-signin';
+import {appleAuth} from '@invertase/react-native-apple-authentication';
 
 GoogleSignin.configure({
   scopes: ['https://www.googleapis.com/auth/drive.readonly'], // [Android] what API you want to access on behalf of the user, default is email and profile
@@ -45,11 +36,34 @@ const App = () => {
     }
   };
 
+  const onAppleButtonPress = async () => {
+    // performs login request
+    const appleAuthRequestResponse = await appleAuth.performRequest({
+      requestedOperation: appleAuth.Operation.LOGIN,
+      requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+    });
+    console.log(appleAuthRequestResponse);
+    console.log(appleAuthRequestResponse.user);
+
+    // get current authentication state for user
+    // /!\ This method must be tested on a real device. On the iOS simulator it always throws an error.
+    const credentialState = await appleAuth.getCredentialStateForUser(appleAuthRequestResponse.user);
+    console.log(credentialState);
+
+    // use credentialState response to ensure the user is authenticated
+    if (credentialState === appleAuth.State.AUTHORIZED) {
+      // user is authenticated
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={{flex: 1}}>
-        <View>
+        <View style={{margin: 14}}>
           <Button title="google signin" onPress={() => signIn()}></Button>
+        </View>
+        <View style={{margin: 14}}>
+          <Button title="apple signin" onPress={() => onAppleButtonPress()}></Button>
         </View>
       </ScrollView>
     </SafeAreaView>
